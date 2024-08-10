@@ -1,0 +1,103 @@
+[
+  {
+    "bindings": {
+      "ctrl-n": null,
+      "ctrl-p": null,
+      "alt-,": "zed::OpenSettings",
+      "ctrl-,": ["workspace::SendKeystrokes", "ctrl-e ,"],
+      "alt-super-,": "zed::OpenKeymap",
+      "ctrl-alt-\\": "workspace::ToggleLeftDock",
+      "alt-shift-enter": "workspace::ToggleZoom"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-f": "editor::MoveRight",
+      "ctrl-shift-f": "editor::SelectRight",
+      "ctrl-b": "editor::MoveLeft",
+      "super-b": "editor::MoveToPreviousWordStart",
+      "ctrl-shift-b": "editor::SelectLeft",
+      "super-shift-b": "editor::SelectToPreviousWordStart",
+      "ctrl-n": "editor::MoveDown",
+      "super-f": "editor::MoveToNextWordEnd",
+      "ctrl-shift-n": "editor::SelectDown",
+      "ctrl-p": "editor::MoveUp",
+      "ctrl-shift-p": "editor::SelectUp",
+      "ctrl-e": "editor::MoveToEndOfLine",
+      "ctrl-shift-e": "editor::SelectToEndOfLine",
+      "ctrl-a": "editor::MoveToBeginningOfLine",
+      "ctrl-shift-a": "editor::SelectToBeginningOfLine",
+
+      "super-d": "pane::SplitRight",
+      "alt-super-2": "pane::SplitRight",
+
+      "ctrl-alt-p": "editor::MoveLineUp",
+      "ctrl-alt-n": "editor::MoveLineDown",
+
+      "ctrl-shift-alt-p": "editor::AddSelectionAbove",
+      "ctrl-shift-alt-n": "editor::AddSelectionBelow",
+      "ctrl-d": "editor::Delete",
+
+      "ctrl-shift-alt-super-p": "editor::CopyPath",
+
+      "ctrl-left": "editor::Fold",
+      "ctrl-right": "editor::UnfoldLines",
+
+      "alt-a": "editor::SelectAll",
+
+      "alt-shift-d": "editor::DuplicateLineDown",
+
+      "ctrl-\\": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-|": ["workspace::ActivatePaneInDirection", "Left"],
+
+      "alt-d": ["editor::SelectNext", { "replace_newest": false }],
+      "alt-super-d": "editor::UndoSelection",
+      "ctrl-enter": "editor::NewlineBelow",
+      "ctrl-shift-enter": "editor::NewlineAbove",
+      "ctrl-,": ["workspace::SendKeystrokes", "ctrl-e ,"],
+      "ctrl-<": ["workspace::SendKeystrokes", "ctrl-e , ctrl-enter"],
+      "alt-super-=": ["workspace::SendKeystrokes", "=>"],
+      "alt-super-.": ["workspace::SendKeystrokes", "|>"],
+      "ctrl-alt-super-=": ["workspace::SendKeystrokes", "() space => space {} left left left left left left left"],
+      "alt-f": ["buffer_search::Deploy", { "replace_enabled": true }],
+      "alt-shift-f": "pane::DeploySearch"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-n": "editor::MoveDown",
+      "alt-super-n": "workspace::NewFile",
+      "ctrl-t": "file_finder::Toggle",
+      "alt-t": "file_finder::Toggle",
+      "ctrl-alt-super-p": "command_palette::Toggle",
+      "ctrl-alt-super-f": "outline::Toggle"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-n": "editor::MoveDown",
+      "alt-super-n": "workspace::NewFile"
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "up": "editor::ContextMenuPrev",
+      "ctrl-p": "editor::ContextMenuPrev",
+      "down": "editor::ContextMenuNext",
+      "ctrl-n": "editor::ContextMenuNext",
+      "pageup": "editor::ContextMenuFirst",
+      "pagedown": "editor::ContextMenuLast"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "alt-{": "pane::ActivateNextItem",
+      "alt-}": "pane::ActivatePrevItem"
+    }
+  }
+]
