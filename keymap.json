@@ -29,6 +29,9 @@
       "ctrl-a": "editor::MoveToBeginningOfLine",
       "ctrl-shift-a": "editor::SelectToBeginningOfLine",
 
+      "ctrl-k": "editor::DeleteToEndOfLine",
+      "ctrl-shift-k": "editor::DeleteLine",
+
       "super-d": "pane::SplitRight",
       "alt-super-2": "pane::SplitRight",
 
