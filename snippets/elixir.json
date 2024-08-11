@@ -11,12 +11,32 @@
   },
   "def inline": {
     "prefix": "defi",
-    "body": "def $1, do: $0",
+    "body": ["def $1, do: $0"],
     "description": "inline def"
   },
   "describe": {
     "prefix": "desc",
     "body": ["describe \"$1\" do", "\ttest \"$2\" do", "\t\t$0", "\tend", "end"],
     "description": "describe block"
+  },
+  "eex": {
+    "prefix": "%",
+    "body": ["<%${1:=} $0 %>"],
+    "description": "eex tag"
+  },
+  "error tuple": {
+    "prefix": "err",
+    "body": ["{:error, $0}"],
+    "description": "error tuple"
+  },
+  "for loop": {
+    "prefix": "for",
+    "body": ["<%= for $1 <- $2 do %>", "\t$0", "<% end %>"],
+    "description": "for loop"
+  },
+  "inspect": {
+    "prefix": "log",
+    "body": ["IO.inspect(${1:$2, label: \"$2\"})"],
+    "description": "inspect"
   }
 }

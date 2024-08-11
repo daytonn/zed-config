@@ -1,14 +1,14 @@
 [
   {
     "bindings": {
-      "ctrl-n": "menu::SelectNext",
-      "ctrl-p": "menu::SelectPrev",
       "alt-,": "zed::OpenSettings",
       "ctrl-,": ["workspace::SendKeystrokes", "ctrl-e ,"],
       "alt-super-,": "zed::OpenKeymap",
       "ctrl-alt-\\": "workspace::ToggleLeftDock",
       "alt-shift-enter": "workspace::ToggleZoom",
-      "ctrl-`": "workspace::ToggleBottomDock"
+      "ctrl-`": "workspace::ToggleBottomDock",
+      "alt-{": "pane::ActivatePrevItem",
+      "alt-}": "pane::ActivateNextItem"
     }
   },
   {
@@ -65,7 +65,6 @@
 
       "ctrl-\\": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-|": ["workspace::ActivatePaneInDirection", "Left"],
-
       "alt-d": ["editor::SelectNext", { "replace_newest": false }],
       "alt-super-d": "editor::UndoSelection",
       "ctrl-enter": "editor::NewlineBelow",
@@ -75,6 +74,8 @@
       "alt-super-=": ["workspace::SendKeystrokes", "=>"],
       "alt-super-.": ["workspace::SendKeystrokes", "|>"],
       "ctrl-alt-super-=": ["workspace::SendKeystrokes", "() space => space {} left left left left left left left"],
+      "ctrl-;": ["workspace::SendKeystrokes", "ctrl-e ;"],
+      "ctrl-:": ["workspace::SendKeystrokes", "ctrl-e ; ctrl-enter"],
       "alt-f": ["buffer_search::Deploy", { "replace_enabled": true }],
       "alt-shift-f": "pane::DeploySearch"
     }
@@ -82,7 +83,8 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-n": "editor::MoveDown",
+      "ctrl-n": null,
+      "ctrl-p": null,
       "alt-super-n": "workspace::NewFile",
       "ctrl-t": "file_finder::Toggle",
       "alt-t": "file_finder::Toggle",
@@ -142,13 +144,6 @@
       "ctrl-n": "editor::ContextMenuNext",
       "pageup": "editor::ContextMenuFirst",
       "pagedown": "editor::ContextMenuLast"
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "alt-{": "pane::ActivateNextItem",
-      "alt-}": "pane::ActivatePrevItem"
     }
   }
 ]
