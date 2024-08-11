@@ -1,0 +1,22 @@
+{
+  "sigil H": {
+    "prefix": "h",
+    "body": ["~H\"\"\"", "\t$0", "\"\"\""],
+    "description": "sigil H"
+  },
+  "pry": {
+    "prefix": "db",
+    "body": ["require IEx", "IEx.pry()"],
+    "description": "pry"
+  },
+  "def inline": {
+    "prefix": "defi",
+    "body": "def $1, do: $0",
+    "description": "inline def"
+  },
+  "describe": {
+    "prefix": "desc",
+    "body": ["describe \"$1\" do", "\ttest \"$2\" do", "\t\t$0", "\tend", "end"],
+    "description": "describe block"
+  }
+}

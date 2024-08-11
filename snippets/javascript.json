@@ -1,0 +1,12 @@
+{
+  "Log to the console": {
+    "prefix": "log",
+    "body": ["console.log(${1:\"$0\"})"],
+    "descriptions": "Log to the console"
+  },
+  "Debugger": {
+    "prefix": "db",
+    "body": ["debugger"],
+    "description": "Debugger statement"
+  }
+}

@@ -1,13 +1,14 @@
 [
   {
     "bindings": {
-      "ctrl-n": null,
-      "ctrl-p": null,
+      "ctrl-n": "menu::SelectNext",
+      "ctrl-p": "menu::SelectPrev",
       "alt-,": "zed::OpenSettings",
       "ctrl-,": ["workspace::SendKeystrokes", "ctrl-e ,"],
       "alt-super-,": "zed::OpenKeymap",
       "ctrl-alt-\\": "workspace::ToggleLeftDock",
-      "alt-shift-enter": "workspace::ToggleZoom"
+      "alt-shift-enter": "workspace::ToggleZoom",
+      "ctrl-`": "workspace::ToggleBottomDock"
     }
   },
   {
@@ -29,10 +30,21 @@
       "ctrl-a": "editor::MoveToBeginningOfLine",
       "ctrl-shift-a": "editor::SelectToBeginningOfLine",
 
+      "ctrl-j": "editor::JoinLines",
+
+      "super-p": "editor::MoveToBeginning",
+      "super-n": "editor::MoveToEnd",
+
+      "ctrl-alt-l": "editor::ConvertToLowerCase",
+      "ctrl-shift-alt-u": "editor::ConvertToUpperCase",
+      "ctrl-alt-u": "editor::ConvertToTitleCase",
+      "alt-s": "editor::SortLinesCaseSensitive",
+
       "ctrl-k": "editor::DeleteToEndOfLine",
       "ctrl-shift-k": "editor::DeleteLine",
 
       "super-d": "pane::SplitRight",
+      "super-shift-d": "pane::SplitDown",
       "alt-super-2": "pane::SplitRight",
 
       "ctrl-alt-p": "editor::MoveLineUp",
@@ -81,8 +93,44 @@
   {
     "context": "ProjectPanel",
     "bindings": {
-      "ctrl-n": "editor::MoveDown",
+      "ctrl-n": "menu::SelectNext",
+      "ctrl-p": "menu::SelectPrev",
       "alt-super-n": "workspace::NewFile"
+    }
+  },
+  {
+    "context": "BufferSearchBar && !in_replace > Editor",
+    "bindings": {
+      "ctrl-p": "search::PreviousHistoryQuery",
+      "ctrl-n": "search::NextHistoryQuery"
+    }
+  },
+  {
+    "context": "Picker || menu",
+    "bindings": {
+      "ctrl-p": "menu::SelectPrev",
+      "ctrl-n": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "ProjectSearchBar > Editor",
+    "bindings": {
+      "ctrl-p": "search::PreviousHistoryQuery",
+      "ctrl-n": "search::NextHistoryQuery"
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "ctrp-p": "editor::ContextMenuPrev",
+      "ctrl-n": "editor::ContextMenuNext"
+    }
+  },
+  {
+    "context": "Picker || menu",
+    "bindings": {
+      "ctrl-p": "menu::SelectPrev",
+      "ctrl-n": "menu::SelectNext"
     }
   },
   {
