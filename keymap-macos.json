@@ -41,8 +41,9 @@
       "ctrl-backspace": "editor::DeleteToPreviousWordStart",
       "ctrl-/": ["editor::ToggleComments", { "advance_downwards": false }],
 
-      "alt-d": "pane::SplitRight",
-      "super-cmd-2": "pane::SplitRight",
+      "alt-v": "pane::SplitRight",
+      "alt-h": "pane::SplitDown",
+      "super-alt-2": "pane::SplitRight",
 
       "ctrl-super-p": "editor::MoveLineUp",
       "ctrl-super-n": "editor::MoveLineDown",
@@ -67,14 +68,17 @@
       "ctrl-\\": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-|": ["workspace::ActivatePaneInDirection", "Left"],
 
+      "ctrl-`": "workspace::ToggleBottomDock",
+
       "super-d": ["editor::SelectNext", { "replace_newest": false }],
       "super-alt-d": "editor::UndoSelection",
       "ctrl-enter": "editor::NewlineBelow",
       "ctrl-shift-enter": "editor::NewlineAbove",
       "ctrl-,": ["workspace::SendKeystrokes", "ctrl-e ,"],
       "ctrl-<": ["workspace::SendKeystrokes", "ctrl-e , ctrl-enter"],
-      "super-alt-=": ["workspace::SendKeystrokes", "=>"],
-      "super-alt-.": ["workspace::SendKeystrokes", "|>"],
+      "super-alt-=": ["workspace::SendKeystrokes", "=> "],
+      "super-alt-.": ["workspace::SendKeystrokes", "|> "],
+      "ctrl-super-alt--": ["workspace::SendKeystrokes", "<- "],
       "ctrl-super-alt-=": ["workspace::SendKeystrokes", "() space => space {} left left left left left left left"],
       "super-f": ["buffer_search::Deploy", { "replace_enabled": true }],
       "super-shift-f": "pane::DeploySearch"
@@ -115,6 +119,12 @@
     "bindings": {
       "super-}": "pane::ActivateNextItem",
       "super-{": "pane::ActivatePrevItem"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-`": "workspace::ToggleBottomDock"
     }
   }
 ]

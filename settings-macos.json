@@ -65,5 +65,23 @@
     "light": "One Light",
     "dark": "Gruvbox Dark Hard"
   },
-  "ui_font_size": 16
+  "ui_font_size": 16,
+  "use_autoclose": true,
+  "language_overrides": {
+    "Elixir": {
+      "format_on_save": {
+        "external": {
+          "command": "mix",
+          "arguments": ["format", "--stdin-filename", "{buffer_path}", "-"]
+        }
+      }
+    }
+  },
+  "lsp": {
+    "elixir-ls": {
+      "settings": {
+        "dialyzerEnabled": true
+      }
+    }
+  }
 }
