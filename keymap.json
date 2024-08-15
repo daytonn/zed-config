@@ -1,14 +1,18 @@
 [
   {
     "bindings": {
-      "alt-,": "zed::OpenSettings",
+      "super-,": "zed::OpenSettings",
       "ctrl-,": ["workspace::SendKeystrokes", "ctrl-e ,"],
-      "alt-super-,": "zed::OpenKeymap",
-      "ctrl-alt-\\": "workspace::ToggleLeftDock",
-      "alt-shift-enter": "workspace::ToggleZoom",
-      "ctrl-`": "workspace::ToggleBottomDock",
-      "alt-{": "pane::ActivatePrevItem",
-      "alt-}": "pane::ActivateNextItem"
+      "super-alt-,": "zed::OpenKeymap",
+      "ctrl-super-\\": "workspace::ToggleLeftDock",
+      "super-shift-enter": "workspace::ToggleZoom",
+      "ctrl-z": "editor::Undo",
+      "ctrl-s": "workspace::Save",
+      "ctrl-c": "editor::Copy",
+      "ctrl-shift-z": "editor::Redo",
+      "ctrl-x": "editor::Cut",
+      "ctrl-v": "editor::Paste",
+      "ctrl-w": "pane::CloseActiveItem"
     }
   },
   {
@@ -17,11 +21,11 @@
       "ctrl-f": "editor::MoveRight",
       "ctrl-shift-f": "editor::SelectRight",
       "ctrl-b": "editor::MoveLeft",
-      "super-b": "editor::MoveToPreviousWordStart",
+      "alt-b": "editor::MoveToPreviousWordStart",
       "ctrl-shift-b": "editor::SelectLeft",
-      "super-shift-b": "editor::SelectToPreviousWordStart",
+      "alt-shift-b": "editor::SelectToPreviousWordStart",
       "ctrl-n": "editor::MoveDown",
-      "super-f": "editor::MoveToNextWordEnd",
+      "alt-f": "editor::MoveToNextWordEnd",
       "ctrl-shift-n": "editor::SelectDown",
       "ctrl-p": "editor::MoveUp",
       "ctrl-shift-p": "editor::SelectUp",
@@ -29,110 +33,74 @@
       "ctrl-shift-e": "editor::SelectToEndOfLine",
       "ctrl-a": "editor::MoveToBeginningOfLine",
       "ctrl-shift-a": "editor::SelectToBeginningOfLine",
-
-      "ctrl-j": "editor::JoinLines",
-
-      "super-p": "editor::MoveToBeginning",
-      "super-n": "editor::MoveToEnd",
-
-      "ctrl-alt-l": "editor::ConvertToLowerCase",
-      "ctrl-shift-alt-u": "editor::ConvertToUpperCase",
-      "ctrl-alt-u": "editor::ConvertToTitleCase",
-      "alt-s": "editor::SortLinesCaseSensitive",
-
       "ctrl-k": "editor::DeleteToEndOfLine",
       "ctrl-shift-k": "editor::DeleteLine",
+      "alt-p": "editor::MoveToBeginning",
+      "alt-n": "editor::MoveToEnd",
 
-      "super-d": "pane::SplitRight",
-      "super-shift-d": "pane::SplitDown",
-      "alt-super-2": "pane::SplitRight",
+      "ctrl-backspace": "editor::DeleteToPreviousWordStart",
+      "ctrl-/": ["editor::ToggleComments", { "advance_downwards": false }],
 
-      "ctrl-alt-p": "editor::MoveLineUp",
-      "ctrl-alt-n": "editor::MoveLineDown",
+      "alt-v": "pane::SplitRight",
+      "alt-h": "pane::SplitDown",
+      "super-alt-2": "pane::SplitRight",
 
-      "ctrl-shift-alt-p": "editor::AddSelectionAbove",
-      "ctrl-shift-alt-n": "editor::AddSelectionBelow",
+      "ctrl-super-p": "editor::MoveLineUp",
+      "ctrl-super-n": "editor::MoveLineDown",
+
+      "ctrl-shift-super-p": "editor::AddSelectionAbove",
+      "ctrl-shift-super-n": "editor::AddSelectionBelow",
       "ctrl-d": "editor::Delete",
 
-      "ctrl-shift-alt-super-p": "editor::CopyPath",
+      "ctrl-shift-super-alt-p": "editor::CopyPath",
 
       "ctrl-left": "editor::Fold",
       "ctrl-right": "editor::UnfoldLines",
 
-      "alt-a": "editor::SelectAll",
+      "super-s": "editor::SortLinesCaseSensitive",
+      "ctrl-]": "editor::Indent",
+      "ctrl-[": "editor::Outdent",
 
-      "alt-shift-d": "editor::DuplicateLineDown",
+      "super-a": "editor::SelectAll",
+
+      "super-shift-d": "editor::DuplicateLineDown",
 
       "ctrl-\\": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-|": ["workspace::ActivatePaneInDirection", "Left"],
-      "alt-d": ["editor::SelectNext", { "replace_newest": false }],
-      "alt-super-d": "editor::UndoSelection",
+
+      "ctrl-`": "workspace::ToggleBottomDock",
+
+      "super-d": ["editor::SelectNext", { "replace_newest": false }],
+      "super-alt-d": "editor::UndoSelection",
       "ctrl-enter": "editor::NewlineBelow",
       "ctrl-shift-enter": "editor::NewlineAbove",
       "ctrl-,": ["workspace::SendKeystrokes", "ctrl-e ,"],
       "ctrl-<": ["workspace::SendKeystrokes", "ctrl-e , ctrl-enter"],
-      "alt-super-=": ["workspace::SendKeystrokes", "=>"],
-      "alt-super-.": ["workspace::SendKeystrokes", "|>"],
-      "ctrl-alt-super-=": ["workspace::SendKeystrokes", "() space => space {} left left left left left left left"],
-      "ctrl-;": ["workspace::SendKeystrokes", "ctrl-e ;"],
-      "ctrl-:": ["workspace::SendKeystrokes", "ctrl-e ; ctrl-enter"],
-      "alt-f": ["buffer_search::Deploy", { "replace_enabled": true }],
-      "alt-shift-f": "pane::DeploySearch"
+      "super-alt-=": ["workspace::SendKeystrokes", "=> "],
+      "super-alt-.": ["workspace::SendKeystrokes", "|> "],
+      "ctrl-super-alt--": ["workspace::SendKeystrokes", "<- "],
+      "ctrl-super-alt-=": ["workspace::SendKeystrokes", "() space => space {} left left left left left left left"],
+      "super-f": ["buffer_search::Deploy", { "replace_enabled": true }],
+      "super-shift-f": "pane::DeploySearch"
     }
   },
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-n": null,
-      "ctrl-p": null,
-      "alt-super-n": "workspace::NewFile",
+      "ctrl-n": "editor::MoveDown",
+      "super-alt-n": "workspace::NewFile",
       "ctrl-t": "file_finder::Toggle",
+      "super-t": "file_finder::Toggle",
       "alt-t": "file_finder::Toggle",
-      "ctrl-alt-super-p": "command_palette::Toggle",
-      "ctrl-alt-super-f": "outline::Toggle"
+      "ctrl-super-alt-p": "command_palette::Toggle",
+      "ctrl-super-alt-f": "outline::Toggle"
     }
   },
   {
     "context": "ProjectPanel",
     "bindings": {
-      "ctrl-n": "menu::SelectNext",
-      "ctrl-p": "menu::SelectPrev",
-      "alt-super-n": "workspace::NewFile"
-    }
-  },
-  {
-    "context": "BufferSearchBar && !in_replace > Editor",
-    "bindings": {
-      "ctrl-p": "search::PreviousHistoryQuery",
-      "ctrl-n": "search::NextHistoryQuery"
-    }
-  },
-  {
-    "context": "Picker || menu",
-    "bindings": {
-      "ctrl-p": "menu::SelectPrev",
-      "ctrl-n": "menu::SelectNext"
-    }
-  },
-  {
-    "context": "ProjectSearchBar > Editor",
-    "bindings": {
-      "ctrl-p": "search::PreviousHistoryQuery",
-      "ctrl-n": "search::NextHistoryQuery"
-    }
-  },
-  {
-    "context": "Editor && (showing_code_actions || showing_completions)",
-    "bindings": {
-      "ctrp-p": "editor::ContextMenuPrev",
-      "ctrl-n": "editor::ContextMenuNext"
-    }
-  },
-  {
-    "context": "Picker || menu",
-    "bindings": {
-      "ctrl-p": "menu::SelectPrev",
-      "ctrl-n": "menu::SelectNext"
+      "ctrl-n": "editor::MoveDown",
+      "super-alt-n": "workspace::NewFile"
     }
   },
   {
@@ -144,6 +112,19 @@
       "ctrl-n": "editor::ContextMenuNext",
       "pageup": "editor::ContextMenuFirst",
       "pagedown": "editor::ContextMenuLast"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "super-}": "pane::ActivateNextItem",
+      "super-{": "pane::ActivatePrevItem"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-`": "workspace::ToggleBottomDock"
     }
   }
 ]

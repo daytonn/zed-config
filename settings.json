@@ -1,7 +1,4 @@
 {
-  "features": {
-    "inline_completion_provider": "none"
-  },
   "assistant": {
     "version": "2",
     "default_model": {
@@ -11,7 +8,7 @@
   },
   "auto_update": true,
   "autosave": "on_focus_change",
-  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "buffer_font_family": "FiraCode Nerd Font",
   "buffer_font_size": 18,
   "chat_panel": {
     "dock": "left"
@@ -61,12 +58,30 @@
   "terminal": {
     "copy_on_select": true,
     "line_height": "standard",
-    "font_family": "FiraCode Nerd Font Mono"
+    "font_family": "FiraCode Nerd Font"
   },
   "theme": {
     "mode": "system",
     "light": "One Light",
     "dark": "Gruvbox Dark Hard"
   },
-  "ui_font_size": 16
+  "ui_font_size": 16,
+  "use_autoclose": true,
+  "language_overrides": {
+    "Elixir": {
+      "format_on_save": {
+        "external": {
+          "command": "mix",
+          "arguments": ["format", "--stdin-filename", "{buffer_path}", "-"]
+        }
+      }
+    }
+  },
+  "lsp": {
+    "elixir-ls": {
+      "settings": {
+        "dialyzerEnabled": true
+      }
+    }
+  }
 }
