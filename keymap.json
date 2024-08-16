@@ -38,6 +38,8 @@
       "alt-p": "editor::MoveToBeginning",
       "alt-n": "editor::MoveToEnd",
 
+      "super-`": "terminal_panel::ToggleFocus",
+
       "ctrl-backspace": "editor::DeleteToPreviousWordStart",
       "ctrl-/": ["editor::ToggleComments", { "advance_downwards": false }],
 
