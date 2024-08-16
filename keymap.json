@@ -4,11 +4,11 @@
       "alt-,": "zed::OpenSettings",
       "ctrl-,": ["workspace::SendKeystrokes", "ctrl-e ,"],
       "alt-super-,": "zed::OpenKeymap",
-      "ctrl-alt-\\": "workspace::ToggleLeftDock",
+      "ctrl-alt-\\": "workspace::ToggleRightDock",
       "alt-shift-enter": "workspace::ToggleZoom",
-      "ctrl-`": "workspace::ToggleBottomDock",
       "alt-{": "pane::ActivatePrevItem",
-      "alt-}": "pane::ActivateNextItem"
+      "alt-}": "pane::ActivateNextItem",
+      "ctrl-`": "workspace::ToggleBottomDock"
     }
   },
   {
@@ -29,7 +29,7 @@
       "ctrl-shift-e": "editor::SelectToEndOfLine",
       "ctrl-a": "editor::MoveToBeginningOfLine",
       "ctrl-shift-a": "editor::SelectToBeginningOfLine",
-
+      "ctrl-`": "workspace::ToggleBottomDock",
       "ctrl-j": "editor::JoinLines",
 
       "super-p": "editor::MoveToBeginning",
@@ -44,7 +44,7 @@
       "ctrl-shift-k": "editor::DeleteLine",
 
       "super-d": "pane::SplitRight",
-      "super-shift-d": "pane::SplitDown",
+      "super-h": "pane::SplitDown",
       "alt-super-2": "pane::SplitRight",
 
       "ctrl-alt-p": "editor::MoveLineUp",
