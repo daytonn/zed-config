@@ -4,7 +4,7 @@
       "super-,": "zed::OpenSettings",
       "ctrl-,": ["workspace::SendKeystrokes", "ctrl-e ,"],
       "super-alt-,": "zed::OpenKeymap",
-      "ctrl-super-\\": "workspace::ToggleLeftDock",
+      "ctrl-super-\\": "workspace::ToggleRightDock",
       "super-shift-enter": "workspace::ToggleZoom",
       "ctrl-z": "editor::Undo",
       "ctrl-s": "workspace::Save",
@@ -12,7 +12,12 @@
       "ctrl-shift-z": "editor::Redo",
       "ctrl-x": "editor::Cut",
       "ctrl-v": "editor::Paste",
-      "ctrl-w": "pane::CloseActiveItem"
+      "ctrl-w": "pane::CloseActiveItem",
+      "ctrl-t": "file_finder::Toggle",
+      "super-t": "file_finder::Toggle",
+      "alt-t": "file_finder::Toggle",
+      "ctrl-super-alt-p": "command_palette::Toggle",
+      "ctrl-super-alt-f": "outline::Toggle"
     }
   },
   {
