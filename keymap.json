@@ -22,33 +22,36 @@
       "super-shift-b": "editor::SelectToPreviousWordStart",
       "ctrl-n": "editor::MoveDown",
       "super-f": "editor::MoveToNextWordEnd",
+      "super-shift-f": "editor::SelectToNextWordEnd",
       "ctrl-shift-n": "editor::SelectDown",
       "ctrl-p": "editor::MoveUp",
       "ctrl-shift-p": "editor::SelectUp",
       "ctrl-e": "editor::MoveToEndOfLine",
       "ctrl-shift-e": "editor::SelectToEndOfLine",
       "ctrl-a": "editor::MoveToBeginningOfLine",
-      "ctrl-shift-a": "editor::SelectToBeginningOfLine",
       "ctrl-`": "workspace::ToggleBottomDock",
-      "ctrl-j": "editor::JoinLines",
-
-      "super-p": "editor::MoveToBeginning",
-      "super-n": "editor::MoveToEnd",
+      "ctrl-j": "editor:: JoinLines",
 
       "ctrl-alt-l": "editor::ConvertToLowerCase",
       "ctrl-shift-alt-u": "editor::ConvertToUpperCase",
       "ctrl-alt-u": "editor::ConvertToTitleCase",
-      "alt-s": "editor::SortLinesCaseSensitive",
 
+      "ctrl-shift-a": ["editor::SelectToBeginningOfLine", { "stop_at_soft_wraps": true }],
       "ctrl-k": "editor::DeleteToEndOfLine",
       "ctrl-shift-k": "editor::DeleteLine",
 
       "super-d": "pane::SplitRight",
-      "super-h": "pane::SplitDown",
       "alt-super-2": "pane::SplitRight",
 
       "ctrl-alt-p": "editor::MoveLineUp",
       "ctrl-alt-n": "editor::MoveLineDown",
+
+      "super-v": "pane::SplitRight",
+      "super-h": "pane::SplitDown",
+      "super-alt-2": "pane::SplitRight",
+
+      "ctrl-super-p": "editor::MoveLineUp",
+      "ctrl-super-n": "editor::MoveLineDown",
 
       "ctrl-shift-alt-p": "editor::AddSelectionAbove",
       "ctrl-shift-alt-n": "editor::AddSelectionBelow",
@@ -59,23 +62,32 @@
       "ctrl-left": "editor::Fold",
       "ctrl-right": "editor::UnfoldLines",
 
+      "alt-s": "editor::SortLinesCaseSensitive",
+      "ctrl-]": "editor::Indent",
+      "ctrl-[": "editor::Outdent",
+
       "alt-a": "editor::SelectAll",
 
       "alt-shift-d": "editor::DuplicateLineDown",
 
       "ctrl-\\": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-|": ["workspace::ActivatePaneInDirection", "Left"],
-      "alt-d": ["editor::SelectNext", { "replace_newest": false }],
       "alt-super-d": "editor::UndoSelection",
-      "ctrl-enter": "editor::NewlineBelow",
-      "ctrl-shift-enter": "editor::NewlineAbove",
-      "ctrl-,": ["workspace::SendKeystrokes", "ctrl-e ,"],
-      "ctrl-<": ["workspace::SendKeystrokes", "ctrl-e , ctrl-enter"],
+
+      "ctrl-shift-c": "terminal_panel::ToggleFocus",
+
+      "alt-d": ["editor::SelectNext", { "replace_newest": false }],
+      "super-alt-d": "editor::UndoSelection",
       "alt-super-=": ["workspace::SendKeystrokes", "=>"],
       "alt-super-.": ["workspace::SendKeystrokes", "|>"],
       "ctrl-alt-super-=": ["workspace::SendKeystrokes", "() space => space {} left left left left left left left"],
       "ctrl-;": ["workspace::SendKeystrokes", "ctrl-e ;"],
       "ctrl-:": ["workspace::SendKeystrokes", "ctrl-e ; ctrl-enter"],
+
+      "super-alt-=": ["workspace::SendKeystrokes", "=> "],
+      "super-alt-.": ["workspace::SendKeystrokes", "|>"],
+      "ctrl-super-alt-,": ["workspace::SendKeystrokes", "<-"],
+      "ctrl-super-alt-=": ["workspace::SendKeystrokes", "() space => space {} left left left left left left left"],
       "alt-f": ["buffer_search::Deploy", { "replace_enabled": true }],
       "alt-shift-f": "pane::DeploySearch"
     }
@@ -144,6 +156,19 @@
       "ctrl-n": "editor::ContextMenuNext",
       "pageup": "editor::ContextMenuFirst",
       "pagedown": "editor::ContextMenuLast"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "alt-}": "pane::ActivateNextItem",
+      "alt-{": "pane::ActivatePrevItem"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-`": "workspace::ToggleBottomDock"
     }
   }
 ]
