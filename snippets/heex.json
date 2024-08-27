@@ -1,0 +1,7 @@
+{
+  "eex": {
+    "prefix": "%",
+    "body": ["<%${1:=} $0 %>"],
+    "description": "eex tag"
+  },
+}

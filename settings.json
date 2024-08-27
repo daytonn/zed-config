@@ -9,7 +9,7 @@
   "auto_update": true,
   "autosave": "on_focus_change",
   "buffer_font_family": "FiraCode Nerd Font",
-  "buffer_font_size": 18,
+  "buffer_font_size": 20,
   "chat_panel": {
     "dock": "left"
   },
@@ -17,6 +17,9 @@
   "current_line_highlight": "all",
   "cursor_blink": true,
   "format_on_save": "on",
+  "features": {
+    "inline_completion_provider": "copilot"
+  },
   "git": {
     "inline_blame": {
       "enabled": true,
@@ -66,7 +69,7 @@
   "project_panel": {
     "button": true,
     "default_width": 150,
-    "dock": "right",
+    "dock": "left",
     "file_icons": true,
     "folder_icons": true,
     "git_status": true,
@@ -104,8 +107,8 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Gruvbox Dark Hard"
+    "dark": "Neon Denver"
   },
-  "ui_font_size": 16,
+  "ui_font_size": 22,
   "use_autoclose": true
 }
